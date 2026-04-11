@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { BookContext } from '../../context/BookContext';
 import BookCard from '../ui/BookCard';
+import ListedBook from './ListedBook';
 
 const ListedWishList = () => {
 
@@ -15,9 +16,9 @@ const ListedWishList = () => {
     }
 
     return (
-        <div>
+        <div className='grid grid-cols-1 gap-6 my-10'>
             {
-                wishList.map((book, index) => <BookCard key={index} book={book}></BookCard>)
+                wishList.map((book, index) => <ListedBook key={index} book={book}></ListedBook>)
             }
         </div>
     );
