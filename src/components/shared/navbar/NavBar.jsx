@@ -6,7 +6,7 @@ const NavBar = () => {
     const links = <>
         <li><NavLink to={'/'} className={({ isActive }) => `font-semibold mr-1 ${isActive ? "text-green-600 border border-green-600" : ""}`}>Home</NavLink></li>
         <li><NavLink to={'/books'} className={({ isActive }) => `font-semibold mr-1 ${isActive ? "text-green-600 border border-green-600" : ""}`}>Listed Books</NavLink></li>
-        <li><NavLink to={'/page-to-read'} className={({ isActive }) => `font-semibold mr-1 ${isActive ? "text-green-600 border border-green-600" : ""}`}>Page To Read</NavLink></li>
+        <li><NavLink to={'/pageToRead'} className={({ isActive }) => `font-semibold mr-1 ${isActive ? "text-green-600 border border-green-600" : ""}`}>Page To Read</NavLink></li>
     </>
     return (
         <nav className="bg-base-100 shadow-sm">
