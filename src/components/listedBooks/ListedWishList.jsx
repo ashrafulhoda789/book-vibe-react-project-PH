@@ -1,13 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { BookContext } from '../../context/BookContext';
 import BookCard from '../ui/BookCard';
 import ListedBook from './ListedBook';
 
-const ListedWishList = () => {
+const ListedWishList = ({sortingType}) => {
 
     const { wishList } = useContext(BookContext);
 
-    if(wishList.length === 0){
+    const filterWishList = useMemo(() => {
+            if(sortingType === 'pages'){
+                return [...wishList].sort((a,b) => a.totalPages - b.totalPages);
+            }
+            else if(sortingType === 'rating'){
+                return [...wishList].sort((a,b) => a.rating - b.rating);
+            }
+            return wishList;
+        }, [sortingType, wishList])
+
+    if(filterWishList.length === 0){
         return (
             <div className='h-[50vh] bg-gray-100 flex items-center justify-center my-10 rounded-2xl'>
                 <h2 className='text-gray-600 font-bold text-3xl'>No wish list books found</h2>
@@ -18,7 +28,7 @@ const ListedWishList = () => {
     return (
         <div className='grid grid-cols-1 gap-6 my-10'>
             {
-                wishList.map((book, index) => <ListedBook key={index} book={book}></ListedBook>)
+                filterWishList.map((book, index) => <ListedBook key={index} book={book}></ListedBook>)
             }
         </div>
     );
