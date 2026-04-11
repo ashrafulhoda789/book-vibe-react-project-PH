@@ -18,11 +18,11 @@ const BookDetails = () => {
     // console.log(expectedBook);
     const { image, bookName, author, category, review, yearOfPublishing, publisher, tags, rating, totalPages } = expectedBook;
 
-    const {handleMarkAsRead, storedBooks} = useContext(BookContext);
-    console.log(storedBooks);
+    const {handleMarkAsRead, handleWishList} = useContext(BookContext);
+    // console.log(storedBooks);
 
     return (
-        <div className="card lg:card-side bg-base-100 shadow-sm w-11/12 mx-auto my-20">
+        <div className="card lg:card-side bg-base-100 shadow-sm w-11/12 md:w-10/12 mx-auto my-20">
             <figure className='bg-gray-50 p-6 m-6 flex-1 rounded-2xl'>
                 <img
                     src={image}
@@ -64,7 +64,7 @@ const BookDetails = () => {
 
                     <div className='flex items-center gap-2'>
                         <button onClick={() => handleMarkAsRead(expectedBook)} className="btn">Mark as Read</button>
-                        <button className="btn btn-accent text-white">Add To Wishlist</button>
+                        <button onClick={() => handleWishList(expectedBook)} className="btn btn-accent text-white">Add To Wishlist</button>
                     </div>
                 </div>
             </div>
