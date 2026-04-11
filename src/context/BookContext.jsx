@@ -1,12 +1,19 @@
 import React, { createContext, useState } from 'react';
 import { toast } from 'react-toastify';
+import { addReadListToLocalDB, addWishListToLocalDB, getAllReadListFromLocalDB, getAllWishListFromLocalDB } from '../utilities/localDB';
 
 export const BookContext = createContext();
 
 const BookProvider = ({children}) => {
 
-    const [readList, setReadList] = useState([]);
-    const [wishList, setWishList] = useState([]);
+    const [readList, setReadList] = useState(() => getAllReadListFromLocalDB());
+    const [wishList, setWishList] = useState(() => getAllWishListFromLocalDB());
+
+    // useEffect(()=>{
+    //     const getReadList = getAllReadListFromLocalDB();
+    //     console.log(getReadList);
+    //     setReadList(getReadList);
+    // }, [])
 
     const handleMarkAsRead = (currentBook) =>{
         // step 1: store book id
@@ -15,6 +22,8 @@ const BookProvider = ({children}) => {
         // step 3: duplicate handle by showing toast
         // step 4: add the book to the array or collection
         // console.log(bookId);
+
+        
 
         // const isExistInWishList = wishList.find(book => book.bookId == currentBook.bookId);
 
@@ -29,6 +38,7 @@ const BookProvider = ({children}) => {
             toast.warn('The book is already exist in Read List');
         }
         else{
+            addReadListToLocalDB(currentBook);
             setReadList([...readList, currentBook]);
             toast.success(`${currentBook.bookName} is added to Read List`)
         }
@@ -43,6 +53,8 @@ const BookProvider = ({children}) => {
         // step 4: add the book to the array or collection
         // console.log(bookId);
 
+        
+
         const isExistInReadList = readList.find(book => book.bookId == currentBook.bookId);
 
         if(isExistInReadList){
@@ -56,6 +68,7 @@ const BookProvider = ({children}) => {
             toast.warn('The book is already exist in Wish List');
         }
         else{
+            addWishListToLocalDB(currentBook);
             setWishList([...wishList, currentBook]);
             toast.success(`${currentBook.bookName} is added to wish list`)
         }
