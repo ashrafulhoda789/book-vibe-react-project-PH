@@ -15,29 +15,29 @@ const ErrorPage = () => {
         </h2>
 
         {/* Description */}
-        <p className="text-gray-200 mb-6">
-          The page you are looking for doesn’t exist or has been moved.
+        <p className="text-gray-600 mb-6">
+          The page you are looking for doesn't exist or has been moved.
         </p>
 
         {/* Buttons */}
         <div className="flex justify-center gap-4">
           <Link
             to="/"
-            className="bg-white text-indigo-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition"
+            className="btn btn-primary px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition"
           >
             Go Home
           </Link>
 
           <button
             onClick={() => window.history.back()}
-            className="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-indigo-600 transition"
+            className="btn px-6 py-2 rounded-full hover:bg-white hover:text-indigo-600 transition"
           >
             Go Back
           </button>
         </div>
 
         {/* Extra */}
-        <p className="mt-6 text-sm text-gray-300">
+        <p className="mt-6 text-sm text-gray-600">
           Need help? Contact support.
         </p>
       </div>
