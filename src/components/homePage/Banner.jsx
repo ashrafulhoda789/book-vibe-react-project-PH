@@ -1,5 +1,6 @@
 import React from 'react';
 import bannerBookImg from '../../assets/banner.png'
+import { Link } from 'react-router';
 
 const Banner = () => {
     return (
@@ -11,7 +12,7 @@ const Banner = () => {
                 />
                 <div className='text-center lg:text-left'>
                     <h1 className="text-5xl leading-15 font-bold">Books to freshen up <br /> your bookshelf</h1>
-                    <button className="btn btn-primary mt-8">View The List</button>
+                    <Link to='/books' className="btn btn-primary mt-8">View The List</Link>
                 </div>
             </div>
         </div>
