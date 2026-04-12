@@ -1,16 +1,54 @@
-# React + Vite
+# 📚 Book Vibe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **Single Page Application (SPA)** built with React that allows users to explore books, manage reading lists, and visualize reading progress.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+👉 https://books-vibe-ph.netlify.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📖 Overview
 
-## Expanding the ESLint configuration
+**Book Vibe** is a React-based web application where users can browse books, view detailed information, and manage their personal reading lists.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project demonstrates core React concepts like **routing, state management, and Context API** in a real-world scenario.
+
+---
+
+## ✨ Features
+
+- 📚 Explore a collection of books  
+- 🔍 View detailed information by clicking on a book card  
+- ❤️ Add books to **Read List** and **Wish List**  
+- 🔄 Sort books based on:
+  - Number of pages  
+  - Ratings  
+- 📊 Visualize reading data with a **dynamic bar chart**  
+- ⚡ Smooth navigation using **Single Page Application (SPA)**  
+
+---
+
+## 🛠️ Technologies Used
+
+- ⚛️ React  
+- 🔀 React Router  
+- 🎯 Context API  
+- 📊 Recharts (Data Visualization)  
+- 🎨 Tailwind CSS  
+- 🌐 API Integration  
+
+---
+
+## 🧠 Key Concepts Implemented
+
+- **SPA (Single Page Application)** architecture  
+- **Routing** with React Router  
+- **State Management** using `useState` and lifting state up  
+- **Context API** to solve props drilling  
+- **Dynamic Rendering**  
+- **Sorting Logic**  
+- **Data Visualization using charts**
+- 
+---
